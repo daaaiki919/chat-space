@@ -36,8 +36,8 @@
 
 | column               |    type     |
 |:---------------------|------------:|
-| user_id(外部キー制約)   |     integer |
-| group_id(外部キー制約)  |     integer |
+| user_id(外部キー制約)   |  references |
+| group_id(外部キー制約)  |  references |
 
 <br>
 <br>
