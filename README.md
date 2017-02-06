@@ -10,40 +10,47 @@
 
 #### usersテーブル
 
-| column     |    type     |
-|:-----------|------------:|
-| id         |     integer |
-| name       |      string |
-| group_id   |     integer |
+| column                  |    type     |
+|:------------------------|------------:|
+| id(主キー制約)            |     integer |
+| name(NOT NULL)(一意性制約)|      string |
+| group_id(主キー制約)      |     integer |
+
+・has_many :image ・has_many :messages ・has_many :group
 
 
 #### imageテーブル
 
-| column     |    type     |
-|:-----------|------------:|
-| id         |     integer |
-| name       |      string |
+| column                 |    type     |
+|:-----------------------|------------:|
+| id(外部キー制約)          |     integer |
+| name                   |      string |
+
+
+・belongs_to :user
+
+
+#### groupテーブル
+
+| column                    |    type     |
+|:--------------------------|------------:|
+| id(外部キー制約)            |     integer |
+| name(NOT NULL)(一意性制約)  |      string |
+
+
+belongs_to :user
 
 
 #### messagesテーブル
 
-| column     |    type     |
-|:-----------|------------:|
-| body       |        text |
-| image      |      string |
-| group_id   |     integer |
-| user_id    |     integer |
+| column               |    type     |
+|:---------------------|------------:|
+| body(NOT NULL)       |        text |
+| image                |      string |
+| group_id(外部キー制約)  |     integer |
+| user_id(外部キー制約)   |     integer |
+
+
+belongs_to :user belongs_to :group
 
 ---
-
-### アソシエーション
-
-・has_many :image   
-・has_many :messages
-
-### 制約
-
-・NOT NULL制約  
-・一意性制約  
-・主キー制約  
-・外部キー制約  
