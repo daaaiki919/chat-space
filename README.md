@@ -1,28 +1,38 @@
-== README
+# データベース設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+---
 
-Things you may want to cover:
+## ChatSpaceの機能
+①. 新規登録機能   ②.1対1のチャット機能 ③.複数人によるグループチャット機能 ④.チャット相手の検索機能   
+⑤.チャットグループへのユーザー招待機能 ⑥.チャットの履歴表示機能 ⑦.画像送信機能 ⑧.チャットの自動更新
 
-* Ruby version
+---
 
-* System dependencies
+#### usersテーブル
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+| column     |    type     |
+|:-----------|------------:|
+| id         |     integer |
+| name       |      string |
+| group_id   |     integer |
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+#### imageテーブル
+
+| column     |    type     |
+|:-----------|------------:|
+| id         |     integer |
+| name       |      string |
+
+
+#### messagesテーブル
+
+| column     |    type     |
+|:-----------|------------:|
+| body       |        text |
+| image      |      string |
+| group_id   |     integer |
+| user_id    |     integer |
+
+---
+
