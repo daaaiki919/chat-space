@@ -14,7 +14,7 @@
 |:------------------------|------------:|
 | name(NOT NULL)(一意性制約)|      string |
 
-・has_many :messages ・has_many :groups
+・has_many :messages ・has_many :groups, through: :group_users
 
 ログイン機能に関してはgem(devise)を使用
 
@@ -24,7 +24,7 @@
 |:--------------------------|------------:|
 | name(NOT NULL)(一意性制約)  |      string |
 
-・has_many :messages ・has_many :users, through: :messages
+・has_many :messages ・has_many :users, through: :group_users
 
 #### group_usersテーブル
 
