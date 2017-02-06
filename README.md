@@ -12,21 +12,19 @@
 
 | column                  |    type     |
 |:------------------------|------------:|
-| id(主キー制約)            |      integer|
 | name(NOT NULL)(一意性制約)|      string |
 
-・has_many :messages 
+・has_many :messages ・has_many :groups
 
 #### groupテーブル
 
 | column                    |    type     |
 |:--------------------------|------------:|
-| id(外部キー制約)            |     integer |
 | name(NOT NULL)(一意性制約)  |      string |
 
 ・has_many :messages ・belongs_to :user
 
-#### users_groupテーブル
+#### group_usersテーブル
 
 | column               |    type     |
 |:---------------------|------------:|
