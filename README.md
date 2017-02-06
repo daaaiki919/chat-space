@@ -16,13 +16,15 @@
 
 ・has_many :messages ・has_many :groups
 
+ログイン機能に関してはgem(devise)を使用
+
 #### groupテーブル
 
 | column                    |    type     |
 |:--------------------------|------------:|
 | name(NOT NULL)(一意性制約)  |      string |
 
-・has_many :messages ・belongs_to :user
+・has_many :messages ・has_many :users, through: :messages
 
 #### group_usersテーブル
 
