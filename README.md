@@ -12,23 +12,10 @@
 
 | column                  |    type     |
 |:------------------------|------------:|
-| id(主キー制約)            |     integer |
+| id(主キー制約)            |      integer|
 | name(NOT NULL)(一意性制約)|      string |
-| group_id(主キー制約)      |     integer |
 
-・has_many :image ・has_many :messages ・has_many :group
-
-
-#### imageテーブル
-
-| column                 |    type     |
-|:-----------------------|------------:|
-| id(外部キー制約)          |     integer |
-| name                   |      string |
-
-
-・belongs_to :user
-
+・has_many :messages 
 
 #### groupテーブル
 
@@ -37,8 +24,15 @@
 | id(外部キー制約)            |     integer |
 | name(NOT NULL)(一意性制約)  |      string |
 
+・has_many :messages ・belongs_to :user
 
-belongs_to :user
+#### users_groupテーブル
+
+| column               |    type     |
+|:---------------------|------------:|
+| user_id(外部キー制約)   |     integer |
+| group_id(外部キー制約)  |     integer |
+
 
 
 #### messagesテーブル
