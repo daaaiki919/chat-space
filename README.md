@@ -47,8 +47,8 @@
 |:---------------------|------------:|
 | body(NOT NULL)       |        text |
 | image                |      string |
-| group_id(外部キー制約)  |     integer |
-| user_id(外部キー制約)   |     integer |
+| group_id(外部キー制約)  |  references |
+| user_id(外部キー制約)   |  references |
 
 
 ・belongs_to :user <br>・belongs_to :group
