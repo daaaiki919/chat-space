@@ -7,7 +7,9 @@
 ⑤.チャットグループへのユーザー招待機能 ⑥.チャットの履歴表示機能 ⑦.画像送信機能 ⑧.チャットの自動更新
 
 ---
-
+<br>
+<br>
+<br>
 #### usersテーブル
 
 | column                  |    type     |
@@ -18,7 +20,10 @@
 
 ログイン機能に関してはgem(devise)を使用
 
-#### groupテーブル
+<br>
+<br>
+<br>
+#### groupsテーブル
 
 | column                    |    type     |
 |:--------------------------|------------:|
@@ -26,6 +31,9 @@
 
 ・has_many :messages ・has_many :users, through: :group_users
 
+<br>
+<br>
+<br>
 #### group_usersテーブル
 
 | column               |    type     |
@@ -33,8 +41,9 @@
 | user_id(外部キー制約)   |     integer |
 | group_id(外部キー制約)  |     integer |
 
-
-
+<br>
+<br>
+<br>
 #### messagesテーブル
 
 | column               |    type     |
