@@ -16,11 +16,10 @@
 |:------------------------|------------:|
 | name(NOT NULL)(一意性制約)|      string |
 
-・has_many :messages ・has_many :groups, through: :group_users
+・has_many :messages<br>・has_many :groups, through: :group_users
 
 ログイン機能に関してはgem(devise)を使用
 
-<br>
 <br>
 <br>
 #### groupsテーブル
@@ -29,9 +28,8 @@
 |:--------------------------|------------:|
 | name(NOT NULL)(一意性制約)  |      string |
 
-・has_many :messages ・has_many :users, through: :group_users
+・has_many :messages <br>・has_many :users, through: :group_users
 
-<br>
 <br>
 <br>
 #### group_usersテーブル
@@ -41,7 +39,6 @@
 | user_id(外部キー制約)   |     integer |
 | group_id(外部キー制約)  |     integer |
 
-<br>
 <br>
 <br>
 #### messagesテーブル
@@ -54,6 +51,6 @@
 | user_id(外部キー制約)   |     integer |
 
 
-belongs_to :user belongs_to :group
+・belongs_to :user <br>・belongs_to :group
 
 ---
