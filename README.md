@@ -36,3 +36,14 @@
 
 ---
 
+### アソシエーション
+
+・has_many :image   
+・has_many :messages
+
+### 制約
+
+・NOT NULL制約  
+・一意性制約  
+・主キー制約  
+・外部キー制約  
