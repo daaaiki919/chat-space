@@ -3,4 +3,60 @@
   height: 100%;
   width: calc(100% - 300px);
   background-color: #fafafa;
+
+  &__top{
+  height: 100px;
+  padding: 0 40px 0;
+  background-color: white;
+
+    .chat-group{
+      float: left;
+      font-size: 20px;
+      color: #333333;
+      padding-top: 35px;
+    }
+
+  .chat-members{
+    font-size: 12px;
+    color: #999999;
+    padding-top: 15px;
+    clear: left;
+  }
+  .right-content__edit{
+    float: right;
+    height: 100px;
+    .edit-button {
+      margin: 28px 0;
+      padding-right: 20px;
+      padding-left: 20px;
+      line-height: 40px;
+      color: #38aef0;
+      font-size: 14px;
+      border: 2px solid;
+    }
+   }
+  }
+
+    .middle{
+      padding-top: 46px;
+
+
+  &__border{
+    border-top: #eeeeee;
+    padding: 0 40px 0;
+
+
+
+      &__name{
+        font-size: 16px;
+        font-weight: bold;
+        color: #434A54;
+      }
+      &__time{
+        font-size: 12px;
+        color: #999999;
+        padding-left: 10px;
+      }
+    }
+  }
 }
