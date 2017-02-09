@@ -4,3 +4,9 @@
   text-align: center;
 }
 
+.clearfix:after{
+  content: "";
+  clear: both;
+  display: block;
+}
+

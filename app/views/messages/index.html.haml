@@ -1,5 +1,5 @@
 %p.header チャットグループが作成されました。
-.body
+.wrapper
   .left-content
     .left-content-top
       %p.left-content__user-name sample
@@ -7,17 +7,41 @@
     .left-contant-bottom
       %ul.space
         %li.space__group
-        =link_to
-        %p.space__group__name sample
-        %p.space__group__chat-message aa
+          =link_to
+          %p.space__group__name sample
+          %p.space__group__chat-message aa
+        %li.space__group
+          =link_to
+          %p.space__group__name sample
+          %p.space__group__chat-message aa
 
-        %li.space__chat-message aa
+
+  .right-content.clearfix
+
+  .right-content__top.cleafix
+    %p.chat-group.clearfix sample
+    .right-content__edit
+    =link_to
+    %p.edit-button Edit
+    %p.chat-members.clearfix Members: aa aa
+
+.right-content__middle
+  %ul.message
+    %li.message__contents.cleafix
+      %p.message__contents__sender sample
+      %p.message__contents__time 2016/10/02 06:27:30
+      %p.message__contents__content aa
+    %li.message__contents.cleafix
+      %p.message__contents__sender sample
+      %p.message__contents__time 2016/10/02 06:27:30
+      %p.message__contents__content aa
 
 
-.right-content
-  .right-content__top
-    %p.chat-group sample
-    %p.chat-members Members: aa aa
-
-.right-content__border
-  %ul.middles
+.right-content__footer.clearfix
+  %form
+  .right-content__footer__body
+  %input.text{:type=>"text",:placeholder=>"type a message"}
+  %label.right-content__footer__body__image
+  %input.set_image{:type=>"file"}
+  = fa_icon "image"
+  %input.send{:type=>"submit",:value=>"Send"}
