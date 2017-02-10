@@ -1,5 +1,5 @@
 .right-content{
-  float:left;
+  float: left;
   position: relative;
   height: 100%;
   width: calc(100% - 300px);
@@ -14,7 +14,7 @@
       float: left;
       font-size: 20px;
       color: #333333;
-      padding-top: 35px;
+      padding-top: 30px;
     }
 
   .chat-members{
@@ -46,7 +46,7 @@
       border-top: #eeeeee;
       padding: 0 40px 0;
       height: calc(100% - 200px);
-      position:relative;
+      position: relative;
       overflow-y: scroll;
 
       .message{
@@ -78,19 +78,18 @@
       }
      }
 
-   &__footer{
+   .chat-footer{
     position: absolute;
     right: 0;
     left: 0;
     bottom: 0;
     padding: 20px 40px;
-    height: 60px;
     background-color: #ddd;
-}
+
     &__body{
       position: relative;
       float: left;
-      width: calc(100% - 125px);
+      width: calc(100% - 115px);
       height: 50px;
 
       .text{
@@ -98,29 +97,37 @@
         width: 100%;
         border: none;
         padding-left: 10px;
+
       }
+    }
+
       &__image{
         position: absolute;
         top: 0;
         right: 0px;
+        display: inline-block;
         height: 50px;
         line-height: 50px;
         cursor: pointer;
+        text-align: center;
+        width: 40px;
 
         .set_image{
           display: none;
         }
       }
-    }
-  }
+
   input.send{
-    display: block;
-    float: left;
+    display: inline-block;
+    float: right;
     width: 100px;
-    height: 50px;
+    line-height: 50px;
     text-align: center;
-    margin-left: 25px;
+    margin-left: 15px;
     background-color: #38aef0;
     border: none;
     color: #FFFFFF;
+    padding: 0;
   }
+ }
+}
