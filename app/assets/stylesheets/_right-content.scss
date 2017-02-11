@@ -42,6 +42,7 @@
       }
     }
     }
+    
     &__middle{
       border-top: #eeeeee;
       padding: 0 40px 0;
@@ -104,7 +105,7 @@
       &__image{
         position: absolute;
         top: 0;
-        right: 0px;
+        right: 0;
         display: inline-block;
         height: 50px;
         line-height: 50px;
