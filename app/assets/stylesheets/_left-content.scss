@@ -1,0 +1,62 @@
+.left-content{
+  float:left;
+  width: 300px;
+  height: 100%;
+  background-color: #2f3e51;
+}
+  .left-content-top{
+    padding: 0 20px 20px 20px;
+    height: 80px;
+    width: 260px;
+    background-color: #253141;
+    float:left;
+
+    &__user-name{
+      height: 100px;
+      padding: 20px;
+      float:left;
+      font-size: 16px;
+      font-weight: bold;
+      color: white;
+      line-height: 60px;
+      letter-spacing: 2px;
+    }
+    &__set{
+      float: right;
+    }
+    &__setting{
+      color: white;
+      display: inline-block;
+      margin: 35px 0 15px 3px;
+      line-height: 28px;
+      font-size: 20px;
+    }
+  }
+
+.left-content-bottom{
+  margin: 0;
+  padding: 0;
+  color: #2f3e51;
+  list-style: none;
+}
+
+    .group{
+      padding: 20px;
+      color: #FFFFFF;
+
+    &__link{
+      display: block;
+      color: #FFFFFF;
+      text-decoration: none;
+    }
+
+    &__name {
+      display: inline-block;
+      font-size: 15px;
+      margin-bottom: 5px;
+    }
+
+    &__chat-message{
+      font-size: 11px;
+    }
+  }

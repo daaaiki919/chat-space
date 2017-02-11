@@ -1,0 +1,14 @@
+.header{
+  background-color: #38AEF0;
+  color: #fff;
+  text-align: center;
+  font-size: 14px;
+  padding: 5px 0;
+}
+
+.clearfix:after{
+  content: "";
+  clear: both;
+  display: block;
+}
+
