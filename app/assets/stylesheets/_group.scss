@@ -1,11 +1,8 @@
-$bordercolor: #ddd;
-$bluecolor: #38aef0;
-
 .chat-group-form {
   width: 980px;
   margin: 60px auto;
   padding: 40px;
-  background-color: #fff;
+  background-color: $Whitecolor;
   border: 1px solid $bordercolor;
   border-radius: 5px;
   box-sizing: border-box;
@@ -91,7 +88,7 @@ $bluecolor: #38aef0;
       cursor: pointer;
 
       &--add {
-        color: $bluecolor;
+        color: $Bluecolor;
       }
 
       &--remove {
@@ -103,8 +100,8 @@ $bluecolor: #38aef0;
   &__action-btn {
     display: inline-block;
     padding: 12px 20px;
-    color: #fff;
-    background-color: $bluecolor;
+    color: $Whitecolor;
+    background-color: $Bluecolor;
     border: 0;
   }
 }
