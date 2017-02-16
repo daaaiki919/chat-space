@@ -2,6 +2,7 @@ class GroupsController < ApplicationController
 
   def new
     @group = Group.new
+    @users = User.all
   end
 
   def create
@@ -9,13 +10,13 @@ class GroupsController < ApplicationController
      if @group.save
       flash[:notice] = '新しいグループを作成しました'
     else
-      flash[:alert] = 'グループの作成に失敗しました'
+      render :new
     end
     redirect_to root_path
   end
 
   private
   def group_params
-    params.require(:group).permit(:name)
+    params.require(:group).permit(:name, user_ids:[])
   end
 end
