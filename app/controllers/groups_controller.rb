@@ -1,19 +1,20 @@
 class GroupsController < ApplicationController
 
+
   def new
     @group = Group.new
-    @users = User.all
+    @users = User.where.not(id: current_user.id)
   end
 
   def create
     @group = Group.new(group_params)
      if @group.save
-      flash[:notice] = '新しいグループを作成しました'
+      redirect_to root_path, notice: '新しいグループを作成しました'
     else
       render :new
     end
-    redirect_to root_path
-  end
+    end
+
 
   private
   def group_params
