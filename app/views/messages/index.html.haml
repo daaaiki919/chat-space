@@ -1,7 +1,8 @@
 .wrapper
   .left-content
     .left-content-top.clearfix
-      %p.left-content-top__user-name sample
+      %p.left-content-top__user-name
+        = current_user.name
       .left-content-top__set
         = link_to new_group_path, class: "left-content-top__setting" do
           %i.fa.fa-pencil-square-o.fa-lg
@@ -10,14 +11,14 @@
 
 
     .left-contant-bottom
-      %li.group
-        = link_to "",class: "group__link" do
-          %p.group__name sample
-          %p.group__chat-message aa
-      %li.group
-        = link_to "",class: "group__link" do
-          %p.group__name sample
-          %p.group__chat-message aa
+      %ul.conversation
+      -@groups.each do |group|
+        %li.conversation__group
+          = link_to "#",class: "conversation__group__link" do
+            %p.conversation__group__name
+            = group.name
+            %p.conversation__group__chat-message sample
+
 
   .right-content.clearfix
 
@@ -26,7 +27,7 @@
       .right-content__edit
         = link_to "#",class: "edit-link" do
           %p.edit-button Edit
-      %p.chat-members.clearfix Members: aa aa
+      %ul.chat-members.clearfix Members: aa aa
 
     .right-content__middle
       %ul.message
@@ -45,5 +46,5 @@
         %input.text{row: "1", placeholder: "type a message", name: "message[body]", id: "message_body"}
         %label.chat-footer__image
           %set_image{type: "file", name: "message[image]", id: "message_image"}
-          = fa_icon "image"
+          %i.fa.fa-image
       %input.send{type: "submit", value: "Send"}
