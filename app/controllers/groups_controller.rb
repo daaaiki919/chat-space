@@ -5,6 +5,10 @@ class GroupsController < ApplicationController
     @users = User.where.not(id: current_user)
   end
 
+  def edit
+    @group = Group.find(params[:id])
+  end
+
   def create
     @group = Group.new(group_params)
      if current_user.name
@@ -12,7 +16,7 @@ class GroupsController < ApplicationController
         redirect_to root_path, notice: '新しいグループを作成しました'
     else
       flash[:alert] = 'グループ作成に失敗しました'
-      render :new
+      render new_group_path
     end
   end
 
