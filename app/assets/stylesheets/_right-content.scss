@@ -8,7 +8,7 @@
   &__top{
   height: 100px;
   padding: 0 40px 0;
-  background-color: white;
+  background-color: $Whitecolor;
 
     .chat-group{
       float: left;
@@ -35,14 +35,14 @@
       padding-right: 20px;
       padding-left: 20px;
       line-height: 40px;
-      color: #38aef0;
+      color: $Bluecolor;
       font-size: 14px;
       border: 2px solid;
         }
       }
     }
     }
-    
+
     &__middle{
       border-top: #eeeeee;
       padding: 0 40px 0;
@@ -59,7 +59,7 @@
            float: left;
            font-size: 16px;
            font-weight: bold;
-           color: #434A54;
+           color: $messagescolor;
          }
 
          &__time{
@@ -73,7 +73,7 @@
            clear: left;
            padding: 10px 0 40px;
            font-size: 14px;
-           color: #434A54;
+           color: $messagescolor;
         }
        }
       }
@@ -85,7 +85,7 @@
     left: 0;
     bottom: 0;
     padding: 20px 40px;
-    background-color: #ddd;
+    background-color: $bordercolor;
 
     &__body{
       position: relative;
@@ -125,9 +125,9 @@
     line-height: 50px;
     text-align: center;
     margin-left: 15px;
-    background-color: #38aef0;
+    background-color: $Bluecolor;
     border: none;
-    color: #FFFFFF;
+    color: $Whitecolor;
     padding: 0;
   }
  }
