@@ -12,12 +12,7 @@
 
     .left-contant-bottom
       %ul.conversation
-      -@groups.each do |group|
-        %li.conversation__group
-          = link_to "#",class: "conversation__group__link" do
-            %p.conversation__group__name
-            = group.name
-            %p.conversation__group__chat-message sample
+        = render 'leftside'
 
 
   .right-content.clearfix
@@ -25,20 +20,11 @@
     .right-content__top.cleafix
       %p.chat-group.clearfix sample
       .right-content__edit
-        = link_to "#",class: "edit-link" do
+        = link_to "/groups/#{params[:group_id]}/edit",class: "edit-link" do
           %p.edit-button Edit
       %ul.chat-members.clearfix Members: aa aa
+      = render 'rightside'
 
-    .right-content__middle
-      %ul.message
-        %li.message__contents.cleafix
-          %p.message__contents__sender sample
-          %p.message__contents__time 2017/02/10 00:00:00
-          %p.message__contents__content aa
-        %li.message__contents.cleafix
-          %p.message__contents__sender sample
-          %p.message__contents__time 2017/02/10 00:00:00
-          %p.message__contents__content aa
 
     .chat-footer
       %form

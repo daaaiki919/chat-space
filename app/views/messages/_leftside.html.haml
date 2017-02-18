@@ -1,0 +1,6 @@
+-@groups.each do |group|
+  %li.conversation__group
+    = link_to "#",class: "conversation__group__link" do
+      %p.conversation__group__name
+      = group.name
+      %p.conversation__group__chat-message sample
