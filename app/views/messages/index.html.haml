@@ -1,36 +1,49 @@
 .wrapper
   .left-content
-    .left-content-top.clearfix
+    .left-content-top
       %p.left-content-top__user-name
         = current_user.name
-      .left-content-top__set
-        = link_to new_group_path, class: "left-content-top__setting" do
-          %i.fa.fa-pencil-square-o.fa-lg
-        = link_to edit_user_registration_path, class: "left-content-top__setting" do
-          %i.fa.fa-cog.fa-lg
+        .left-content-top__set.clearfix
+          = link_to new_group_path, class: "left-content-top__setting" do
+            %i.fa.fa-pencil-square-o.fa-lg
+          = link_to edit_user_registration_path, class: "left-content-top__setting" do
+            %i.fa.fa-cog.fa-lg
 
-
-    .left-contant-bottom
+    .left-content-bottom
       %ul.conversation
-        = render 'leftside'
-
+        -@groups.each do |group|
+          %li.conversation__group
+            =link_to "/groups/#{group.id}/messages",class: "conversation__group__link" do
+              %p.conversation__group__name
+                = group.name
+              %p.conversation__group__chat-message aa
 
   .right-content.clearfix
 
     .right-content__top.cleafix
-      %p.chat-group.clearfix sample
+      %p.chat-group.clearfix
+        = @group.name
       .right-content__edit
-        = link_to "/groups/#{params[:group_id]}/edit",class: "edit-link" do
+        = link_to edit_group_path(@group),class: "edit-link" do
           %p.edit-button Edit
-      %ul.chat-members.clearfix Members: aa aa
-      = render 'rightside'
+      %ul.chat-members.clearfix
+        %li.chat-members__members Members:
+        -@users. each do |user|
+          %li.chat-members__members
+            = user.name
 
+    .right-content__middle
+      %ul.message
+        %li.message__contents.clearfix
+          %p.message__contents__sender test
+          %p.message__contents__time 2222222
+          %p.message__contents__content なんでやねん
 
-    .chat-footer
+    .right-content__chat-footer.clearfix
       %form
-      .label.chat-footer__body
-        %input.text{row: "1", placeholder: "type a message", name: "message[body]", id: "message_body"}
-        %label.chat-footer__image
-          %set_image{type: "file", name: "message[image]", id: "message_image"}
-          %i.fa.fa-image
-      %input.send{type: "submit", value: "Send"}
+        .right-content__chat-footer__body
+          %input.text{type:"text", placeholder:"type a message"}
+            %label.right-content__chat-footer__body__image
+              %input.set_image{type: "file"}
+                =fa_icon "image"
+        %input.send{type:"submit", value:"Send"}

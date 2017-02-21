@@ -3,8 +3,7 @@
   width: 300px;
   height: 100%;
   background-color: $leftbackcolor;
-  overflow-y: scroll;
-}
+
   .left-content-top{
     padding: 0 20px 20px 20px;
     height: 80px;
@@ -12,52 +11,54 @@
     background-color: #253141;
     float:left;
 
-    &__user-name{
-      height: 100px;
-      padding: 20px;
-      float:left;
-      font-size: 16px;
-      font-weight: bold;
-      color: white;
-      line-height: 60px;
-      letter-spacing: 2px;
-    }
-    &__set{
-      float: right;
-    }
-    &__setting{
-      color: white;
-      display: inline-block;
-      margin: 35px 0 15px 3px;
-      line-height: 28px;
-      font-size: 20px;
+     &__user-name{
+       line-height: 100px;
+       float: left;
+       font-size: 16px;
+       font-weight: bold;
+       color: $Whitecolor;
+     }
+
+     &__set{
+       line-height: 100px;
+       float: right;
+       color: $Whitecolor;
+       font-size: 20px;
+     }
+
+     &__setting{
+       color: $Whitecolor;
+       display: inline-block;
+      }
     }
   }
 
 .left-content-bottom{
-  margin: 0;
-  padding: 0;
+  float: left;
+  width: 300px;
+  height: calc(100% - 100px);
   color: $leftbackcolor;
-  list-style: none;
-}
+  overflow-y: scroll;
 
-    .conversation{
-      padding: 20px;
+  .conversation{
+
+    &__group{
+      padding: 20px 0 20px 20px;
       color: $Whitecolor;
 
-    &__link{
-      display: block;
-      color: $Whitecolor;
-      text-decoration: none;
-    }
+      &__link{
+        color: $Whitecolor;
+        text-decoration: none;
+      }
 
-    &__name {
-      display: inline-block;
-      font-size: 15px;
-      margin-bottom: 5px;
-    }
+      &__name {
+        font-size: 15px;
+      }
 
-    &__chat-message{
-      font-size: 11px;
+      &__chat-message{
+        padding-top: 5px;
+        font-size: 11px;
+      }
     }
+  }
   }
