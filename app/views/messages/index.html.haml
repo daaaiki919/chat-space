@@ -11,12 +11,8 @@
 
     .left-content-bottom
       %ul.conversation
-        -@groups.each do |group|
-          %li.conversation__group
-            =link_to "/groups/#{group.id}/messages",class: "conversation__group__link" do
-              %p.conversation__group__name
-                = group.name
-              %p.conversation__group__chat-message aa
+        = render 'leftside'
+
 
   .right-content.clearfix
 
@@ -34,10 +30,8 @@
 
     .right-content__middle
       %ul.message
-        %li.message__contents.clearfix
-          %p.message__contents__sender test
-          %p.message__contents__time 2222222
-          %p.message__contents__content なんでやねん
+        = render 'rightside'
+
 
     .right-content__chat-footer.clearfix
       %form
