@@ -11,7 +11,6 @@ class GroupsController < ApplicationController
 
   def create
     @group = Group.new(group_params)
-      current_user.name
      if @group.save
         redirect_to root_path, notice: '新しいグループを作成しました'
     else
