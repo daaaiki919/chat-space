@@ -20,13 +20,11 @@
       %p.chat-group.clearfix
         = @group.name
       .right-content__edit
-        = link_to edit_group_path(@group),class: "edit-link" do
+        = link_to edit_group_path(@group), class: "edit-link" do
           %p.edit-button Edit
       %ul.chat-members.clearfix
         %li.chat-members__members Members:
-        -@users. each do |user|
-          %li.chat-members__members
-            = user.name
+        = render 'righttop'
 
     .right-content__middle
       %ul.message
