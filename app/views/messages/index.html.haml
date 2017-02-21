@@ -1,49 +1,41 @@
 .wrapper
   .left-content
-    .left-content-top.clearfix
-      %p.left-content-top__user-name sample
-      .left-content-top__set
-        = link_to new_group_path, class: "left-content-top__setting" do
-          %i.fa.fa-pencil-square-o.fa-lg
-        = link_to edit_user_registration_path, class: "left-content-top__setting" do
-          %i.fa.fa-cog.fa-lg
+    .left-content-top
+      %p.left-content-top__user-name
+        = current_user.name
+        .left-content-top__set.clearfix
+          = link_to new_group_path, class: "left-content-top__setting" do
+            %i.fa.fa-pencil-square-o.fa-lg
+          = link_to edit_user_registration_path, class: "left-content-top__setting" do
+            %i.fa.fa-cog.fa-lg
 
+    .left-content-bottom
+      %ul.conversation
+        = render partial: 'messages/leftside', collection: @groups
 
-    .left-contant-bottom
-      %li.group
-        = link_to "",class: "group__link" do
-          %p.group__name sample
-          %p.group__chat-message aa
-      %li.group
-        = link_to "",class: "group__link" do
-          %p.group__name sample
-          %p.group__chat-message aa
 
   .right-content.clearfix
 
     .right-content__top.cleafix
-      %p.chat-group.clearfix sample
+      %p.chat-group.clearfix
+        = @group.name
       .right-content__edit
-        = link_to "#",class: "edit-link" do
+        = link_to edit_group_path(@group), class: "edit-link" do
           %p.edit-button Edit
-      %p.chat-members.clearfix Members: aa aa
+      %ul.chat-members.clearfix
+        %li.chat-members__members Members:
+        = render partial: 'messages/righttop', collection: @users
 
     .right-content__middle
       %ul.message
-        %li.message__contents.cleafix
-          %p.message__contents__sender sample
-          %p.message__contents__time 2017/02/10 00:00:00
-          %p.message__contents__content aa
-        %li.message__contents.cleafix
-          %p.message__contents__sender sample
-          %p.message__contents__time 2017/02/10 00:00:00
-          %p.message__contents__content aa
+        = render partial: 'messages/rightside'
 
-    .chat-footer
+
+    .right-content__chat-footer.clearfix
       %form
-      .label.chat-footer__body
-        %input.text{row: "1", placeholder: "type a message", name: "message[body]", id: "message_body"}
-        %label.chat-footer__image
-          %set_image{type: "file", name: "message[image]", id: "message_image"}
-          = fa_icon "image"
-      %input.send{type: "submit", value: "Send"}
+        .right-content__chat-footer__body
+          %input.text{type:"text", placeholder:"type a message"}
+            %label.right-content__chat-footer__body__image
+              %input.set_image{type: "file"}
+                =fa_icon "image"
+        %input.send{type:"submit", value:"Send"}
