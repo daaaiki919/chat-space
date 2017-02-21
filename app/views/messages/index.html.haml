@@ -28,7 +28,7 @@
 
     .right-content__middle
       %ul.message
-        = render partial: 'messages/rightside'
+        = render partial: 'messages/rightside', collection: @messages
 
 
     .right-content__chat-footer.clearfix
