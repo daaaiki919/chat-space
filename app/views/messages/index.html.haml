@@ -11,7 +11,7 @@
 
     .left-content-bottom
       %ul.conversation
-        = render partial: 'messages/leftside', collection: @groups
+        = render partial: 'messages/group', collection: @groups
 
 
   .right-content.clearfix
@@ -24,11 +24,11 @@
           %p.edit-button Edit
       %ul.chat-members.clearfix
         %li.chat-members__members Members:
-        = render partial: 'messages/righttop', collection: @users
+        = render partial: 'messages/user', collection: @users
 
     .right-content__middle
       %ul.message
-        = render partial: 'messages/rightside'
+        = render partial: 'messages/message', collection: @messages
 
 
     .right-content__chat-footer.clearfix
