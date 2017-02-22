@@ -1,7 +1,7 @@
 %li.message__contents.cleafix
   %p.message__contents__sender
-    = chatmessages.name
+    = message.name
   %p.message__contents__time
-    = chatmessages.created.at
+    = message.created_at.strftime(%Y/%m/%d %H : %M : %S)
   %p.message__contents__content
-    = chatmessages.body
+    = message.body
