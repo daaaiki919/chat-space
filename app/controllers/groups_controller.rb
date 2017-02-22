@@ -1,5 +1,7 @@
 class GroupsController < ApplicationController
 
+  before_action :set_meeting, only: %i(edit update)
+
   def index
     @groups = current_user.groups
   end
@@ -20,14 +22,13 @@ class GroupsController < ApplicationController
   end
 
    def edit
-    meeting_place
    end
 
    def update
-    meeting_place
     if @group.update(group_params)
       redirect_to group_messages_path(@group.id), notice: 'グループを更新しました'
     else
+      flash[:alert] = 'グループの更新に失敗しました'
       render :edit
     end
    end
@@ -38,7 +39,7 @@ class GroupsController < ApplicationController
     params.require(:group).permit(:name, user_ids: [])
   end
 
-  def meeting_place
+  def set_meeting
     @group = Group.find(params[:id])
   end
 
