@@ -8,7 +8,7 @@ class MessagesController < ApplicationController
   end
 
   def time
-    strftime("%Y/%m/%d %H:%M:%S")
+    created_at.strftime("%Y/%m/%d %H:%M:%S")
   end
 
 end
