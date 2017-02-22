@@ -7,7 +7,7 @@ class MessagesController < ApplicationController
     @users = @group.users
   end
 
-  def time
+  def self.time
     created_at.strftime("%Y/%m/%d %H:%M:%S")
   end
 
