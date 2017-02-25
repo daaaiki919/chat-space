@@ -8,9 +8,9 @@ describe Message do
     end
 
     it "is invalid without a body" do
-      message = build(:message, body: nil)
+      message = build(:message, body: "")
       message.valid?
-      expect(message.errors[:body]).to include("translation missing: ja.activerecord.errors.models.message.attributes.body.blank")
+      expect(message.errors[:body]).to include("を入力してください")
     end
 
     it "is invalid without a group_id" do
@@ -26,4 +26,3 @@ describe Message do
     end
   end
 end
-
