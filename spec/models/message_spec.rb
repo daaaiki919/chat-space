@@ -24,14 +24,12 @@ describe Message do
       message.valid?
       expect(message.errors[:user_id]).to include()
     end
-  end
-end
-
-describe Message do
   describe '#time' do
-    it "is valid with a body, user_id, group_id" do
-      message = build(:message)
-      expect(message).to be_valid
+    it "whether the method returns the expected return value" do
+      message = build(:message, created_at: nil)
+      message.valid?
+      expect(message.errors[:created_at]).to include()
     end
+  end
   end
 end
