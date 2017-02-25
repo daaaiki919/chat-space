@@ -26,3 +26,12 @@ describe Message do
     end
   end
 end
+
+describe Message do
+  describe '#time' do
+    it "is valid with a body, user_id, group_id" do
+      message = build(:message)
+      expect(message).to be_valid
+    end
+  end
+end
