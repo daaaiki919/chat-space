@@ -52,3 +52,8 @@ end
  gem 'haml-rails'
  gem 'font-awesome-rails'
  gem 'devise'
+
+ group :test do
+  gem 'faker'
+end
+
