@@ -26,9 +26,9 @@ describe Message do
     end
   describe '#time' do
     it "whether the method returns the expected return value" do
-      message = build(:message, created_at: nil)
+      message = build(:message)
       message.valid?
-      expect(message.errors[:created_at]).to include()
+      expect(message.errors[:created_at]).to eq created_at.("%Y/%m/%d %H:%M:%S")
     end
   end
   end
