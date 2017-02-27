@@ -24,12 +24,12 @@ describe Message do
       message.valid?
       expect(message.errors[:user_id]).to include()
     end
+
   describe '#time' do
     it "whether the method returns the expected return value" do
-      message = build(:message)
-      message.valid?
-      expect(message.errors[:created_at]).to eq created_at.("%Y/%m/%d %H:%M:%S")
+      expect(:created_at).to be_truthy
     end
+
   end
   end
 end
