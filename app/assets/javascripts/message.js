@@ -9,6 +9,7 @@ $(function() {
     var message = textField.val();
     $.ajax({
       type: 'POST',
+      url: '/message',
       date: {
         message: {
           content: message
