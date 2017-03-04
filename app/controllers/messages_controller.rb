@@ -10,7 +10,9 @@ class MessagesController < ApplicationController
   def create
     @message = Message.new(message_params)
     if @message.save
-        redirect_to group_messages_path(params[:group_id])
+      respond_to do |format|
+        format.html { redirect_to group_messages_path(params[:group_id]) }
+        format.json { render json: @message }
     else
       flash.now[:alert] = 'メッセージの送信に失敗しました'
       render :index
