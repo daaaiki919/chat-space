@@ -32,7 +32,7 @@
 
 
     .right-content__chat-footer.clearfix
-      = form_for [@group, @message] do |f|
+      = form_for [@group, @message], html: { id: "new_message" } do |f|
         .right-content__chat-footer__body
           = f.text_field :body, class: "text", placeholder: "type a message"
           %label.right-content__chat-footer__body__image

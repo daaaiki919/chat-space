@@ -12,7 +12,7 @@ class MessagesController < ApplicationController
     if @message.save
       respond_to do |format|
         format.html { redirect_to group_messages_path(params[:group_id]) }
-        format.json { render json: @message }
+        format.json { render json: Message.to_api_json(@message) }
       end
     else
       flash.now[:alert] = 'メッセージの送信に失敗しました'
