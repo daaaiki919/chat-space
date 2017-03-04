@@ -1,29 +1,43 @@
 $(function() {
   function buildHTML(message) {
-    var html = $('<li class="message">').append(message.content);
+    var html = '<li class="message__contents">' +
+    '<p class="message__contents__sender">' +
+    message.name +
+    '<p class="message__contents__time">' +
+    message.time +
+    '<p class="message__contents__content">' +
+    message.body;
+    return html;
   }
 
-  $('.js-form').on('submit', function(e) {
+  function scroll_view(){
+    $('.right-content__middle').animate({scrollTop: $('.right-content__middle')[0].scrollHeight}, 'fast');
+  }
+
+  $('#new_message').on('submit', function(e) {
     e.preventDefault();
-    var textField = $('.js-form__$textField');
-    var message = textField.val();
+    var textField = $('.text');
+    var message_input = textField.val();
+    var message_url = $("#new_message").attr("action");
     $.ajax({
       type: 'POST',
-      url: '/message',
-      date: {
+      url: message_url,
+      data: {
         message: {
-          content: message
+          body: message_input
         }
       },
-      datetype: 'json'
+      dataType: 'json',
     })
-    .done(function(date) {
-      var html = buildHTML(date);
-      $('.messages').append(html);
+    .done(function(data) {
+      var html = buildHTML(data);
+      $('ul.message').append(html);
       textField.val('');
+      scroll_view();
     })
     .fail(function() {
       alert('error');
     });
+    return false
   });
 });

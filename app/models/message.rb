@@ -7,4 +7,11 @@ class Message < ApplicationRecord
     created_at.strftime("%Y/%m/%d %H:%M:%S")
   end
 
+  def self.to_api_json(message)
+    {
+      name: message.user.name,
+      time: message.time,
+      body: message.body
+    }
+  end
 end
