@@ -5,11 +5,10 @@ $(function() {
 
   $('.js-form').on('submit', function(e) {
     e.preventDefault();
-    var textField = $('.js-form__text-field');
+    var textField = $('.js-form__$textField');
     var message = textField.val();
     $.ajax({
       type: 'POST',
-      url: '/message.json',
       date: {
         message: {
           content: message
