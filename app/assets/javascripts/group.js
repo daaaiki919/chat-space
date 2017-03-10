@@ -1,9 +1,9 @@
 $(function() {
   var word = ""
 
-  function appendList(user_id, user_name) {
-    var item = '<li class = "chat-group-user clearfix", user_id = ' + user_id + ', user_name = ' + user_name + ' >'
-      + '<p class = "chat-group-user__name" >' + user_name
+  function appendList(userId, userName) {
+    var item = '<li class = "chat-group-user clearfix", user_id = ' + userId + ', user_name = ' + userName + ' >'
+      + '<p class = "chat-group-user__name" >' + userName
       + '<div class = "chat-group-user__btn">'
       + '<p class = "chat-group-user__btn--add" >' + "追加";
        $("#user-search-result").append(item);
