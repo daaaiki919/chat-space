@@ -53,6 +53,7 @@ end
  gem 'haml-rails'
  gem 'font-awesome-rails'
  gem 'devise'
+ gem 'carrierwave'
 
  group :test do
   gem 'rails-controller-testing'
