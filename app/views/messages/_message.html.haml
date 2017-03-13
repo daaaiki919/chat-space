@@ -3,5 +3,9 @@
     = message.user.name
   %p.message__contents__time
     = message.time
-  %p.message__contents__content
-    = message.body
+  - if message.image.present?
+    %p.message__contents__content
+      = image_tag message.image
+  - else
+    %p.message__contents__content
+      = message.body
