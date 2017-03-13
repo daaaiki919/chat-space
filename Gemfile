@@ -54,6 +54,7 @@ end
  gem 'font-awesome-rails'
  gem 'devise'
  gem 'carrierwave'
+ gem 'rmagick'
 
  group :test do
   gem 'rails-controller-testing'
