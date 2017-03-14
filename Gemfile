@@ -55,6 +55,8 @@ end
  gem 'devise'
  gem 'carrierwave'
  gem 'rmagick'
+ gem 'fog'
+ gem 'dotenv-rails'
 
  group :test do
   gem 'rails-controller-testing'
