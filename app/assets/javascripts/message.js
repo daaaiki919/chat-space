@@ -31,7 +31,6 @@ $(function() {
       })
       .done(function(messages) {
         var user_message_number = $('.message__contents').length;
-        console.log(messages.length)
         if(user_message_number != messages.length) {
           for (var i = user_message_number; i < messages.length; i++) {
             var html = buildHTML(messages[i]);
