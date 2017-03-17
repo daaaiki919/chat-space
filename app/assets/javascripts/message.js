@@ -29,18 +29,19 @@ $(function() {
         url: user_url,
         dataType: 'json'
       })
-      .done(function(data) {
+      .done(function(messages) {
         var user_message_number = $('.message__contents').length;
-        if(user_message_number != data.messages.length) {
-          for (var i = user_message_number; i < data.messages.length; i++) {
-            var html = buildHTML(data.messages[i]);
+        console.log(messages.length)
+        if(user_message_number != messages.length) {
+          for (var i = user_message_number; i < messages.length; i++) {
+            var html = buildHTML(messages[i]);
             $('ul.message').append(html);
             scroll_view();
           }
         }
       })
       .fail(function() {
-        console.log('error');
+        alert('error');
       });
     }
   };
