@@ -5,6 +5,10 @@ class MessagesController < ApplicationController
   def index
     @users = @group.users
     @message = Message.new
+    respond_to do |format|
+      format.html { render :index }
+      format.json
+    end
   end
 
   def create
