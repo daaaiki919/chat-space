@@ -18,6 +18,33 @@ $(function() {
     $('.right-content__middle').animate({scrollTop: $('.right-content__middle')[0].scrollHeight}, 'fast');
   }
 
+  var updateTime = 8000;
+  setInterval(autoUpdate, updateTime);
+
+  function autoUpdate() {
+    var user_url = document.location.pathname;
+    if (user_url.match(/messages/)) {
+      $.ajax({
+        type: 'GET',
+        url: user_url,
+        dataType: 'json'
+      })
+      .done(function(data) {
+        var user_message_number = $('.message__contents').length;
+        if(user_message_number != data.messages.length) {
+          for (var i = user_message_number; i < data.messages.length; i++) {
+            var html = buildHTML(data.messages[i]);
+            $('ul.message').append(html);
+            scroll_view();
+          }
+        }
+      })
+      .fail(function() {
+        console.log('error');
+      });
+    }
+  };
+
   $('#new_message').on('submit', function(e) {
     e.preventDefault();
     var textField = $('.text');

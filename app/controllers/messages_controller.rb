@@ -5,6 +5,16 @@ class MessagesController < ApplicationController
   def index
     @users = @group.users
     @message = Message.new
+    respond_to do |format|
+      format.html { render :index }
+      format.json {
+        messages = []
+        @messages.each do |message|
+          messages << Message.to_api_json(message)
+        end
+        render json: { messages: messages }
+      }
+    end
   end
 
   def create
